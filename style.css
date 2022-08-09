@@ -1,0 +1,300 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&family=Rubik&display=swap");
+
+:root {
+  --main-color: rgb(3, 99, 40);
+  --black-color: rgb(48, 40, 40);
+  --border: 0.1rem solid rgba(255, 255, 255);
+}
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize; /* kelimenin ilk harfi büyük digerleri kucuk*/
+  transition: 0.2s ease; /* gecis*/
+}
+/*responsive icin rem kull*/
+html {
+  font-size: 62.5%; /*1rem=16px,artık 1rem=10px oldu*/
+  overflow-x: hidden; /* c ekseninde scrollu kapattık*/
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+}
+body {
+  background-color: var(--black-color);
+}
+section {
+  padding: 3.5rem 7%;
+}
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 2rem 3.2rem;
+  border-radius: 30rem;
+  font-size: 1.7rem;
+  color: aliceblue;
+  background-color: var(--black-color);
+}
+
+/*----------------header start-----------------*/
+.header .logo img {
+  height: 8rem;
+}
+.header {
+  background-color: white;
+  display: flex; /* yanyana dizer*/
+  align-items: center;
+  justify-content: space-between; /*bosluklari esitler*/
+  padding: 0 7%; /* yukari-asagi =0 sag-sol=%7*/
+  margin: 5rem 7%;
+  border-radius: 30rem;
+  box-shadow: 0px 0px 17px -2px rgb(20, 17, 17);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.header .navbar .active,
+.header .navbar a {
+  margin: 0 1rem;
+  font-size: 1.6rem;
+  color: var(--black-color);
+  border-bottom: 0.1rem solid transparent;
+}
+.header .navbar a:hover {
+  border-color: var(--main-color);
+  padding-bottom: 0.5rem;
+}
+.header .buttons button {
+  cursor: pointer;
+  font-size: 2rem;
+  margin-left: 2rem;
+  background-color: transparent;
+}
+/*----------------header end-----------------*/
+/*----------------home start-----------------*/
+.home {
+  min-height: 100vh; /* ekran kadar yer kaplamasi icin*/
+
+  background-size: cover;
+  background-position: center;
+  margin-top: -11.5rem;
+  display: flex;
+  align-items: center;
+}
+.home .content {
+  max-width: 60rem;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.home .content h3 {
+  font-size: 6rem;
+  color: aliceblue;
+}
+.home .content p {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.8;
+  padding: 1rem 0;
+  color: aliceblue;
+}
+
+/*----------------home end-----------------*/
+/*----------------menu start-----------------*/
+.menu .box-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(30rem, 1fr)
+  ); /*yanyana getirmek icin*/
+  gap: 1.5rem; /* yanyana resimlerin arasina bosluk-uzaklasma*/
+}
+.menu .box-container .box {
+  padding: 3rem;
+  background-color: aliceblue;
+  border-radius: 3rem;
+  min-height: 60rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.menu .box-container .box img {
+  width: 100%;
+  object-fit: cover;
+}
+.menu .box-container .box .menu-category {
+  font-size: 1.5rem;
+}
+.menu .box-container .box .menu-category h3 {
+  font-size: 3rem;
+  padding: 1rem;
+}
+/*----------------menu end-----------------*/
+
+/* RING-SECTION */
+
+.home .col-2 {
+  flex-basis: 50%;
+  max-width: 40rem;
+}
+
+.home .col-2 .ring img {
+  width: 100%;
+  max-width: 580px;
+}
+
+#circle-ring {
+  padding-left: 130px;
+  padding-top: 60px;
+}
+
+.home .col-2 .ring {
+  position: relative;
+  margin-left: 25.4rem;
+  margin-top: -5.3rem;
+  width: 400px;
+  height: 400px;
+  background: transparent;
+  border: 3px solid #3c3c3c;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.home .col-2 .ring:before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 100%;
+  height: 100%;
+  border: 3px solid transparent;
+  border-top: 3px solid #fff12e;
+  border-right: 3px solid #fff12e;
+  border-radius: 50%;
+  z-index: -1;
+  animation: returnCircle 10s linear infinite;
+}
+
+.home .col-2 .ring .circle {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 4px;
+  background: transparent;
+  transform-origin: left;
+  z-index: -1;
+  animation: return 10s linear infinite;
+}
+
+.home .col-2 .ring .circle:before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  right: -9px;
+  width: 16px;
+  height: 16px;
+  background: #fff12e;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #fff12e;
+  z-index: -1;
+}
+
+.home .col-2 .ring-two {
+  position: absolute;
+  margin-top: 17rem;
+  margin-left: 0.5rem;
+  top: 13%;
+  left: 56%;
+  width: 500px;
+  height: 500px;
+  background: transparent;
+  border: 3px solid #3c3c3c;
+  border-radius: 50%;
+}
+
+.home .col-2 .ring-two:before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 100%;
+  height: 100%;
+  border: 3px solid transparent;
+  border-bottom: 3px solid #fff12e;
+  border-left: 3px solid #fff12e;
+  border-radius: 50%;
+  animation: returnCircle2 10s linear infinite;
+}
+
+.home .col-2 .ring-two .circle-two {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 4px;
+  background: transparent;
+  transform-origin: left;
+  animation: return2 10s linear infinite;
+}
+
+.home .col-2 .ring-two .circle-two:before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  width: 16px;
+  height: 16px;
+  background: #fff12e;
+  box-shadow: 0 0 20px #fff12e;
+  border-radius: 50%;
+}
+footer p{
+  background-color: aliceblue;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+@keyframes returnCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes return {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(405deg);
+  }
+}
+
+@keyframes returnCircle2 {
+  0% {
+    transform: rotate(-45deg);
+  }
+  100% {
+    transform: rotate(-405deg);
+  }
+}
+
+@keyframes return2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
